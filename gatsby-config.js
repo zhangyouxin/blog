@@ -1,14 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Coder Shinya`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Shinya`,
+      summary: `living in Chengdu`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    siteUrl: `https://blog.weshinekx.cn/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `ShinFrost1129`,
+      weibo: `能说啥就不说什么`,
     },
   },
   plugins: [
@@ -53,7 +54,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: `G-C4SKPVQW3W`,
       },
     },
     `gatsby-plugin-feed`,
