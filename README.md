@@ -1,3 +1,5 @@
+![CD](https://github.com/zhangyouxin/blog/workflows/CD/badge.svg?branch=master)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
