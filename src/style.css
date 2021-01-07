@@ -244,6 +244,7 @@ a:focus {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
   padding: var(--spacing-10) var(--spacing-5);
+  font-size: larger;
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -292,6 +293,7 @@ a:focus {
 }
 
 .bio p {
+  padding-top: var(--spacing-4); 
   margin-bottom: var(--spacing-0);
 }
 
