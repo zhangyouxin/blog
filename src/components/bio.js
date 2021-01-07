@@ -60,7 +60,7 @@ const Bio = () => {
           {` `}
           <a href={`https://weibo.com/u/1674831423`} >微博</a>
           {` `}
-          <a href={`https://github.com/zhangyouxin`} >GitHub</a>
+          <a href={`https://github.com/zhangyouxin/blog`} >GitHub</a>
         </p>
       )}
     </div>
