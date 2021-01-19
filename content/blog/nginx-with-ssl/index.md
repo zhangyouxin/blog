@@ -3,6 +3,8 @@ title: 5 分钟内让你的 nginx 网站支持 HTTPS
 author: shinya
 date: 2021-01-08
 ---
+**先说一下本站就是根据这个博客来加上 HTTPS 支持的。**
+
 > 在 docker-compose 环境下，只需要 5 分钟就可以让你的 Nginx 与 Let's Encrypt 一起运行。
 
 原文链接： <https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71>
@@ -120,7 +122,7 @@ ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 curl -L https://raw.githubusercontent.com/wmnnd/nginx-certbot/master/init-letsencrypt.sh > init-letsencrypt.sh
 ```
 
-（如果你不能访问，那么手动复制[这个网站]的所有内容，手动创建一个 `init-letsencrypt.sh` 脚本把上面的内容粘贴进去）
+（如果你不能访问，那么手动复制[这个网站](https://blog.weshinekx.cn/nginx-with-ssl/)的所有内容，手动创建一个 `init-letsencrypt.sh` 脚本把上面的内容粘贴进去）
 
 **手动编辑这个脚本，把你的域名加到 domain 里面，邮箱填写好你自己的邮箱。**如果你修改过 docker volume 的路径的话，确保 `data_path` 是对的。
 

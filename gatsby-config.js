@@ -5,14 +5,31 @@ module.exports = {
       name: `Shinya`,
       summary: `living in Chengdu`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `一个 web 前端技术博客`,
     siteUrl: `https://blog.weshinekx.cn/`,
     social: {
       twitter: `ShinFrost1129`,
       weibo: `能说啥就不说什么`,
     },
+    keywords: ['前端', 'web', 'react', 'vue']
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-baidu-analytics`,
+      options: {
+        // baidu analytics siteId
+        siteId: "66c8d3206f9e89ac3f551f410d73952f",
+        // Put analytics script in the head instead of the body [default:false]
+        head: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-185915477-1`,
+        head: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,23 +68,17 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `G-HRND18K44R`,
-      },
-    },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Shinya Blog`,
+        short_name: `Shinya`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/site-icon.jpg`,
       },
     },
     `gatsby-plugin-react-helmet`,

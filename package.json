@@ -1,7 +1,7 @@
 {
   "name": "shinya-blog",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "前端技术博客",
   "version": "1.0.0",
   "author": "shinya <shinfrost1129@gmail.com>",
   "bugs": {

@@ -18,6 +18,7 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
+            keywords
             social {
               twitter
             }
@@ -76,7 +77,7 @@ const SEO = ({ description, lang, meta, title }) => {
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `zh-CN`,
   meta: [],
   description: ``,
 }
