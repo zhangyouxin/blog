@@ -1,17 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Coder Shinya`,
+    title: `外卖骑手 Shinya`,
     author: {
       name: `Shinya`,
       summary: `living in Chengdu`,
     },
-    description: `一个 web 前端技术博客`,
+    description: `不太正经的 web 前端技术博客`,
     siteUrl: `https://blog.weshinekx.cn/`,
     social: {
       twitter: `ShinFrost1129`,
       weibo: `能说啥就不说什么`,
     },
-    keywords: ['前端', 'web', 'react', 'vue']
+    keywords: ['前端', 'web', 'react', 'vue', '涩图']
   },
   plugins: [
     {
