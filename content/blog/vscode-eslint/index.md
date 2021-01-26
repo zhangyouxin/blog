@@ -62,7 +62,18 @@ ESLint 插件默认会从当前打开文件夹里寻找 ESlint 库，如果没�
 
 很多博客推荐这样配置，可是这样的格式已经过期了，请使用前一种配置方式。
 
+## 使用 Vetur
+
+如果你使用 Vetur 作为格式化代码插件，那么加入以下代码禁用 Vetur 自带的 ESLinter：
+
+```json
+{
+  "vetur.validation.template": false
+}
+```
+
 ## 参考链接
 
 - [VS Code 官网文档](https://code.visualstudio.com/docs/editor/codebasics#_formatting)
 - [ESLint 插件官方说明](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Vetur 使用说明](https://github.com/octref/veturpack)
