@@ -7,9 +7,7 @@ import { Link, graphql } from "gatsby"
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `找到 ${totalCount} ${
-    totalCount === 1 ? "" : "s"
-  } 篇 "${tag}" 标签的文章`
+  const tagHeader = `找到 ${totalCount} 篇 "${tag}" 标签的文章`
 
   return (
     <div class='global-wrapper'>
