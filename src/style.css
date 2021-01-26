@@ -327,6 +327,9 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+.title-tags a{
+  margin-right: 1rem;
+}
 /* Media queries */
 
 @media (max-width: 42rem) {

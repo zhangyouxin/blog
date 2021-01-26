@@ -24,6 +24,13 @@ const BlogPostTemplate = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
+          <div class='title-tags'>
+          { post.frontmatter.tags && post.frontmatter.tags.map((tag, index) => {
+            return <Link to={`/tags/${tag}`} itemProp="url" key={index}>
+              {tag}
+            </Link>
+          }) }
+          </div>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -85,6 +92,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

@@ -2,6 +2,7 @@
 title: git flow，GitHub flow 和 GitLab flow
 author: shinya
 date: 2020-12-21
+tags: ['工具']
 ---
 
 在团队中使用 git 来管理代码仓库已经是 common sense 了。

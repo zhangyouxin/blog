@@ -2,6 +2,7 @@
 title: 推荐一种 VS Code 上的 ESlint 插件设置
 author: shinya
 date: 2021-01-21
+tags: ['前端', '工具']
 ---
 
 > 如果你在工作中使用用 vscode 作为开发工具，并且习惯使用 vetur 或者 prettier 来格式化代码，在遇到 prettier 规则和项目的 eslint 规则不一致的问题时，看这个或许有用。

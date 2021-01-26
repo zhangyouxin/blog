@@ -2,6 +2,7 @@
 title: (每日一题)等价多米诺骨牌对的数量
 author: shinya
 date: 2021-01-26
+description: LeetCode 1128. 等价多米诺骨牌对的数量
 tags: ['leetcode', '每日一题', '简单', '数组']
 ---
 

@@ -2,6 +2,7 @@
 title: 5 分钟内让你的 nginx 网站支持 HTTPS
 author: shinya
 date: 2021-01-08
+tags: ['服务器']
 ---
 **先说一下本站就是根据这个博客来加上 HTTPS 支持的。**
 

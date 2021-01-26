@@ -30,9 +30,9 @@ const Layout = ({ location, title, children }) => {
         <a href="https://www.gatsbyjs.com">Gatsby</a>
         <div style={{ marginTop: '1rem'}}>友情链接</div>
         <div>
-          <Link className="friend-link" to="https://www.paincker.com/">
+          <a className="friend-link" href="https://www.paincker.com/">
            Paincker
-         </Link>
+         </a>
         </div>
       </footer>
     </div>
