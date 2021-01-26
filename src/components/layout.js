@@ -28,6 +28,12 @@ const Layout = ({ location, title, children }) => {
         © {new Date().getFullYear()}, Built with
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <div style={{ marginTop: '1rem'}}>友情链接</div>
+        <div>
+          <Link className="friend-link" to="https://www.paincker.com/">
+           Paincker
+         </Link>
+        </div>
       </footer>
     </div>
   )

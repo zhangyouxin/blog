@@ -280,6 +280,12 @@ a:focus {
   margin-bottom: var(--spacing-4);
 }
 
+.friend-link {
+  font-family: var(--font-body);
+  text-decoration: none;
+  font-size: var(--fontSize-1);
+}
+
 .header-link-home {
   font-weight: var(--fontWeight-bold);
   font-family: var(--font-heading);
