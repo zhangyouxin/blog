@@ -1,11 +1,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 // Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
 const TagsPage = ({
+  location,
   data: {
     allMarkdownRemark: { group },
     site: {
@@ -13,21 +16,22 @@ const TagsPage = ({
     },
   },
 }) => (
-  <div class="global-wrapper">
-    <Helmet title={title} />
-    <div>
-      <h1>Tags</h1>
-      <ul>
-        {group.map(tag => (
-          <li key={tag.fieldValue}>
-            <Link to={`/tags/${tag.fieldValue}/`}>
-              {tag.fieldValue} ({tag.totalCount})
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
+  <Layout location={location} title="主页">
+    <SEO title="标签" />
+      <Helmet title={title} />
+      <div>
+        <h1>所有标签</h1>
+        <ul>
+          {group.map(tag => (
+            <li key={tag.fieldValue}>
+              <Link to={`/tags/${tag.fieldValue}/`}>
+                {tag.fieldValue} ({tag.totalCount})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+  </Layout>
 )
 
 TagsPage.propTypes = {

@@ -1,16 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
-
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { Helmet } from "react-helmet"
 // Components
 import { Link, graphql } from "gatsby"
 
-const Tags = ({ pageContext, data }) => {
+const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `找到 ${totalCount} 篇 "${tag}" 标签的文章`
 
   return (
-    <div class='global-wrapper'>
+    <Layout location={location} title="主页">
+      <SEO title="标签" />
       <h1>{tagHeader}</h1>
       <ul>
         {edges.map(({ node }) => {
@@ -28,7 +31,7 @@ const Tags = ({ pageContext, data }) => {
               You'll come back to it!
             */}
       <Link to="/tags">所有标签</Link>
-    </div>
+    </Layout>
   )
 }
 
