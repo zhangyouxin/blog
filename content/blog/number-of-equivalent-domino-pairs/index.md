@@ -3,7 +3,7 @@ title: (每日一题)等价多米诺骨牌对的数量
 author: shinya
 date: 2021-01-26
 description: LeetCode 1128. 等价多米诺骨牌对的数量
-tags: ['LeetCode', '每日一题', '简单', '数组']
+tags: ["LeetCode", "每日一题", "简单", "数组"]
 ---
 
 ## 1128. 等价多米诺骨牌对的数量
@@ -41,7 +41,7 @@ var numEquivDominoPairs = function(dominoes) {
     for (let j = i + 1; j < dominoes.length; j++) {
       const element2 = dominoes[j];
       const b = element2[0]
-      let same = true 
+      let same = true
       if (a === b) {
         for (let index = 1; index < element.length; index++) {
           if(element[index] !== element2[index]){

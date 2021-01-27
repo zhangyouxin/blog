@@ -29,14 +29,19 @@ const Layout = ({ location, title, children }) => {
         {` `}
         <a href="https://www.gatsbyjs.com">Gatsby</a>
         {isRootPath && (
-           <div>
-              <div style={{ marginTop: '1rem'}}>友情链接</div>
-              <div>
-                <a className="friend-link" href="https://www.paincker.com/" target="_blank" rel="noreferrer">
-                  Paincker
-                </a>
-              </div>
-           </div>
+          <div>
+            <div style={{ marginTop: "1rem" }}>友情链接</div>
+            <div>
+              <a
+                className="friend-link"
+                href="https://www.paincker.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Paincker
+              </a>
+            </div>
+          </div>
         )}
       </footer>
     </div>

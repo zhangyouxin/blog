@@ -2,8 +2,9 @@
 title: 5 分钟内让你的 nginx 网站支持 HTTPS
 author: shinya
 date: 2021-01-08
-tags: ['服务器']
+tags: ["服务器"]
 ---
+
 **先说一下本站就是根据这个博客来加上 HTTPS 支持的。**
 
 > 在 docker-compose 环境下，只需要 5 分钟就可以让你的 Nginx 与 Let's Encrypt 一起运行。
@@ -33,7 +34,7 @@ Nginx 和 EFF（电子前哨基金会）提供的获取 Let's Encrypt 证书的�
 所以我们就用一个基本的 `docker-compose.yml` 配置就可以启动这两个容器了：
 
 ```yml
-version: '3'
+version: "3"
 services:
   nginx:
     image: nginx:1.15-alpine
@@ -56,12 +57,12 @@ server {
     server_name example.org;
     location / {
         return 301 https://$host$request_uri;
-    }    
+    }
 }
 server {
     listen 443 ssl;
     server_name example.org;
-    
+
     location / {
         proxy_pass http://example.org; #for demo purposes
     }
@@ -76,11 +77,11 @@ Let's Encrypt 通过访问一个很通用的站点 URL 来验证域名的合法�
 
 首先我们需要两个共享的 docker volume， 一个用来验证 chanllenge， 一个用来放真正的证书文件。
 
-把下面这两行加到你的 `docker-compose.yml`  的 nginx 部分的 volume 下面：
+把下面这两行加到你的 `docker-compose.yml` 的 nginx 部分的 volume 下面：
 
 ```yml
-  - ./data/certbot/conf:/etc/letsencrypt
-  - ./data/certbot/www:/var/www/certbot
+- ./data/certbot/conf:/etc/letsencrypt
+- ./data/certbot/www:/var/www/certbot
 ```
 
 这两行加到 certbot 部分：
@@ -144,7 +145,7 @@ entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & 
 在 `nginx` 区域你也需要每过一段时间来重新加载证书，保证用的是最新的证书。
 
 ```yml
-command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
 ```
 
 这会使得 nginx 每 6 个小时就重新加载配置。

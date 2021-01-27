@@ -2,7 +2,7 @@
 title: 动态规划（一），菲波那切数列的 3 种写法
 author: shinya
 date: 2021-01-11
-tags: ['算法', '动态规划']
+tags: ["算法", "动态规划"]
 ---
 
 茴香豆的茴字有 4 种写法，那么菲波那切数列的实现方式有几种？
@@ -13,7 +13,7 @@ tags: ['算法', '动态规划']
 
 斐波那契数列是这样一个数列：1，1，2，3，5，8，13，21 ......
 
-定义为，第一个和第二个数字是 1， 从第 3 个到 n（n属于正无穷）个数字为前一个数和前前一个数的和。
+定义为，第一个和第二个数字是 1， 从第 3 个到 n（n 属于正无穷）个数字为前一个数和前前一个数的和。
 
 若以 `f(n)` 来表示第 `n` 个数， 则 `f(n) = f(n - 1) + f(n + 1)`，那么由此公式可得出：
 
@@ -26,11 +26,11 @@ tags: ['算法', '动态规划']
 ## 基础 JS 实现
 
 ```javascript
-function fib(n){
-  if (n === 1 || n ===2 ){
-    return 1;
+function fib(n) {
+  if (n === 1 || n === 2) {
+    return 1
   }
-  return fib(n-1) + fib(n-2);
+  return fib(n - 1) + fib(n - 2)
 }
 ```
 
@@ -41,16 +41,16 @@ function fib(n){
 注意 memoize 不是 memorize， 前者更像是把上一次计算结果缓存起来。
 
 ```javascript
-let memo = [];
+let memo = []
 function fib(n) {
-  if(memo[n] !== undefined) {
+  if (memo[n] !== undefined) {
     return memo[n]
   }
-  if(n === 1 || n === 2){
-    memo[n] = 1;
+  if (n === 1 || n === 2) {
+    memo[n] = 1
     return 1
   }
-  memo[n] = fib(n-1) + fib(n-2)
+  memo[n] = fib(n - 1) + fib(n - 2)
   return memo[n]
 }
 ```
@@ -64,10 +64,10 @@ function fib(n) {
 ```javascript
 let memo = []
 function fib(n) {
-  memo[1] = 1;
-  memo[2] = 1;
+  memo[1] = 1
+  memo[2] = 1
   for (let index = 3; index <= n; index++) {
-    memo[index] = memo[index-1] + memo[index-2];
+    memo[index] = memo[index - 1] + memo[index - 2]
   }
   return memo[n]
 }

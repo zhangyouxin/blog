@@ -55,12 +55,14 @@ const BlogIndex = ({ data, location }) => {
                     itemProp="description"
                   />
                 </section>
-                <div class='title-tags'>
-                    {tags.map((tag, index) => {
-                      return <Link to={`/tags/${tag}`} itemProp="url" key={index}>
-                      {tag}
-                    </Link>
-                    })}
+                <div class="title-tags">
+                  {tags.map((tag, index) => {
+                    return (
+                      <Link to={`/tags/${tag}`} itemProp="url" key={index}>
+                        {tag}
+                      </Link>
+                    )
+                  })}
                 </div>
               </article>
             </li>

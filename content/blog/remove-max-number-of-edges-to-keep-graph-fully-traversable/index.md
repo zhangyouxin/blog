@@ -3,20 +3,20 @@ title: (每日一题)保证图可完全遍历
 author: shinya
 date: 2021-01-27
 description: LeetCode 1579. 保证图可完全遍历
-tags: ['LeetCode', '每日一题', '困难', '并查集']
+tags: ["LeetCode", "每日一题", "困难", "并查集"]
 ---
 
 ## 1579. 保证图可完全遍历
 
-Alice 和 Bob 共有一个无向图，其中包含 n 个节点和 3  种类型的边：
+Alice 和 Bob 共有一个无向图，其中包含 n 个节点和 3 种类型的边：
 
 - 类型 1：只能由 Alice 遍历。
 - 类型 2：只能由 Bob 遍历。
 - 类型 3：Alice 和 Bob 都可以遍历。
-  
+
 给你一个数组 `edges` ，其中 `edges[i] = [typei, ui, vi]` 表示节点 `ui` 和 `vi` 之间存在类型为 `typei` 的双向边。
 
-请你在保证图仍能够被 Alice和 Bob 完全遍历的前提下，找出可以删除的最大边数。如果从任何节点开始，Alice 和 Bob 都可以到达所有其他节点，则认为图是可以完全遍历的。
+请你在保证图仍能够被 Alice 和 Bob 完全遍历的前提下，找出可以删除的最大边数。如果从任何节点开始，Alice 和 Bob 都可以到达所有其他节点，则认为图是可以完全遍历的。
 
 返回可以删除的最大边数，如果 Alice 和 Bob 无法完全遍历图，则返回 -1 。
 
@@ -69,57 +69,57 @@ edges[i].length == 3
 代码：
 
 ```js
-class UnionFind{
-  constructor(n){
-    this.parent = new Array(n).fill(0).map((item, index) => index);
-    this.size = new Array(n).fill(1);
-    this.setCount = n;
+class UnionFind {
+  constructor(n) {
+    this.parent = new Array(n).fill(0).map((item, index) => index)
+    this.size = new Array(n).fill(1)
+    this.setCount = n
   }
-  clone(){
-    let newUf = new UnionFind(this.size.length);
+  clone() {
+    let newUf = new UnionFind(this.size.length)
     newUf.parent = [...this.parent]
     newUf.size = [...this.size]
     newUf.setCount = this.setCount
     return newUf
   }
   findSet(x) {
-    if(this.parent[x] === x) {
+    if (this.parent[x] === x) {
       return x
     }
     this.parent[x] = this.findSet(this.parent[x])
     return this.parent[x]
   }
-  union(x,y) {
-    if(this.findSet(x) === this.findSet(y)){
-      return false;
+  union(x, y) {
+    if (this.findSet(x) === this.findSet(y)) {
+      return false
     }
     this.size[this.findSet(x)] += this.size[this.findSet(y)]
     this.parent[this.findSet(y)] = this.findSet(x)
     this.setCount--
     return true
   }
-  connected(a,b){
+  connected(a, b) {
     return this.findSet(a) === this.findSet(b)
   }
-  count(){
+  count() {
     return this.setCount
   }
-  show(){
-    console.log(this.parent);
-    console.log(this.size);
+  show() {
+    console.log(this.parent)
+    console.log(this.size)
   }
 }
-var maxNumEdgesToRemove = function(n, edges) {
+var maxNumEdgesToRemove = function (n, edges) {
   let type1 = []
   let type2 = []
   let type3 = []
   for (let i = 0; i < edges.length; i++) {
-    const element = edges[i];
-    if(element[0] === 1){
+    const element = edges[i]
+    if (element[0] === 1) {
       type1.push(element)
-    } else if(element[0] === 2){
+    } else if (element[0] === 2) {
       type2.push(element)
-    } else if(element[0] === 3){
+    } else if (element[0] === 3) {
       type3.push(element)
     }
   }
@@ -130,9 +130,9 @@ var maxNumEdgesToRemove = function(n, edges) {
   let result = 0
   let uf = new UnionFind(n)
   for (let i = 0; i < type3.length; i++) {
-    const element = type3[i];
+    const element = type3[i]
     let u = uf.union(element[1], element[2])
-    if(!u){
+    if (!u) {
       result++
     }
   }
@@ -144,14 +144,14 @@ var maxNumEdgesToRemove = function(n, edges) {
   let uf1 = uf.clone()
   let uf2 = uf.clone()
   for (let i = 0; i < type1.length; i++) {
-    const element = type1[i];
+    const element = type1[i]
     let u = uf1.union(element[1], element[2])
   }
   for (let i = 0; i < type2.length; i++) {
-    const element = type2[i];
+    const element = type2[i]
     let u = uf2.union(element[1], element[2])
   }
-  if(uf1.count() > 1 || uf2.count() > 1){
+  if (uf1.count() > 1 || uf2.count() > 1) {
     return -1
   }
 

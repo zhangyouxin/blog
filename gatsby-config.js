@@ -11,7 +11,7 @@ module.exports = {
       twitter: `ShinFrost1129`,
       weibo: `能说啥就不说什么`,
     },
-    keywords: ['前端', 'web', 'react', 'vue', '涩图']
+    keywords: ["前端", "web", "react", "vue", "涩图"],
   },
   plugins: [
     {

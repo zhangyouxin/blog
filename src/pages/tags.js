@@ -18,19 +18,19 @@ const TagsPage = ({
 }) => (
   <Layout location={location} title="主页">
     <SEO title="标签" />
-      <Helmet title={title} />
-      <div>
-        <h1>所有标签</h1>
-        <ul>
-          {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${tag.fieldValue}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <Helmet title={title} />
+    <div>
+      <h1>所有标签</h1>
+      <ul>
+        {group.map(tag => (
+          <li key={tag.fieldValue}>
+            <Link to={`/tags/${tag.fieldValue}/`}>
+              {tag.fieldValue} ({tag.totalCount})
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   </Layout>
 )
 
