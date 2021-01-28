@@ -13,6 +13,7 @@ const Tags = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location} title="主页">
+      <Helmet title="主页" />
       <SEO title="标签" />
       <h1>{tagHeader}</h1>
       <ul>

@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="https://www.gatsbyjs.com">
     <img alt="Gatsby" src="./content/assets/waimai.jpg" width="60" />
@@ -18,27 +17,27 @@
 
 1. **本地调试**
 
-    安装依赖：
+   安装依赖：
 
-    ```shell
-    yarn
-    ```
+   ```shell
+   yarn
+   ```
 
-    本地运行：
+   本地运行：
 
-    ```shell
-    yarn develop
-    ```
+   ```shell
+   yarn develop
+   ```
 
-    然后你就可以访问 `http://localhost:8000` 了
+   然后你就可以访问 `http://localhost:8000` 了
 
-    也可以访问 `http://localhost:8000/___graphql`来试试 GraphQL
+   也可以访问 `http://localhost:8000/___graphql`来试试 GraphQL
 
 2. **准备支持的功能**
 
-    - [ ] 暗黑模式
-    - [x] 标签功能
-    - [x] 友链
-    - [x] https
-    - [ ] RSS Feed
-    - [ ] Github Actions
+   - [ ] 暗黑模式
+   - [x] 标签功能
+   - [x] 友链
+   - [x] https
+   - [ ] RSS Feed
+   - [ ] Github Actions
