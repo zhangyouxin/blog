@@ -83,6 +83,16 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-valine`,
+      options: {
+        appId: "bqhI8VX2IlzEShAiFHk8uiNn-gzGzoHsz",
+        appKey: "XF3FQXxpAz4CX0ttiBHT0g5e",
+        placeholder: "请输入评论...",
+        visitor: true,
+        avatar: `robohash`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

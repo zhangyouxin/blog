@@ -78,51 +78,59 @@ heights = [[1,2,2],[3,8,2],[5,3,5]]
 这里使用并查集：
 
 ```js
-class UnionFind{
-  constructor(n){
-    this.parent = new Array(n).fill(0).map((item, index) => index);
-    this.size = new Array(n).fill(1);
-    this.setCount = n;
+class UnionFind {
+  constructor(n) {
+    this.parent = new Array(n).fill(0).map((item, index) => index)
+    this.size = new Array(n).fill(1)
+    this.setCount = n
   }
   findSet(x) {
-    if(this.parent[x] === x) {
+    if (this.parent[x] === x) {
       return x
     }
     this.parent[x] = this.findSet(this.parent[x])
     return this.parent[x]
   }
-  union(x,y) {
-    if(this.findSet(x) === this.findSet(y)){
-      return false;
+  union(x, y) {
+    if (this.findSet(x) === this.findSet(y)) {
+      return false
     }
     this.size[this.findSet(x)] += this.size[this.findSet(y)]
     this.parent[this.findSet(y)] = this.findSet(x)
     this.setCount--
     return true
   }
-  connected(a,b){
+  connected(a, b) {
     return this.findSet(a) === this.findSet(b)
   }
-  setCount(){
+  setCount() {
     return this.setCount
   }
-  show(){
-    console.log(this.parent);
-    console.log(this.size);
+  show() {
+    console.log(this.parent)
+    console.log(this.size)
   }
 }
-var minimumEffortPath = function(heights) {
+var minimumEffortPath = function (heights) {
   let paths = []
   const n = heights.length
   const m = heights[0].length
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < m; j++) {
       let index = i * m + j
-      if ( j < m - 1 ){
-        paths.push([index, index + 1, Math.abs(heights[i][j] - heights[i][j + 1])])
+      if (j < m - 1) {
+        paths.push([
+          index,
+          index + 1,
+          Math.abs(heights[i][j] - heights[i][j + 1]),
+        ])
       }
-      if ( i < n - 1 ){
-        paths.push([index, index + m, Math.abs(heights[i][j] - heights[i + 1][j])])
+      if (i < n - 1) {
+        paths.push([
+          index,
+          index + m,
+          Math.abs(heights[i][j] - heights[i + 1][j]),
+        ])
       }
     }
   }
@@ -130,13 +138,13 @@ var minimumEffortPath = function(heights) {
   let uf = new UnionFind(n * m)
   let result = 0
   for (let i = 0; i < sorted.length; i++) {
-    const element = sorted[i];
+    const element = sorted[i]
     uf.union(element[0], element[1])
     result = element[2]
-    if(uf.connected(0, n*m -1)){
-      break;
+    if (uf.connected(0, n * m - 1)) {
+      break
     }
   }
   return result
-};
+}
 ```

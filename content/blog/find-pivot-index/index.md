@@ -38,7 +38,6 @@ nums = [1, 2, 3]
 `nums` 的长度范围为 `[0, 10000]`。
 任何一个 `nums[i]` 将会是一个范围在 `[-1000, 1000]` 的整数。
 
-
 ## 题解
 
 ```js
@@ -46,25 +45,25 @@ nums = [1, 2, 3]
  * @param {number[]} nums
  * @return {number}
  */
-var pivotIndex = function(nums) {
-  if(nums.length === 0) {
+var pivotIndex = function (nums) {
+  if (nums.length === 0) {
     return -1
   }
-  if(nums.length === 1) {
+  if (nums.length === 1) {
     return 0
   }
-  let l = 0;
-  let r = 0;
+  let l = 0
+  let r = 0
   let c = 0
   for (let i = 1; i < nums.length; i++) {
-    r += nums[i];
+    r += nums[i]
   }
-  while(c < nums.length - 1 && l !== r){
+  while (c < nums.length - 1 && l !== r) {
     r -= nums[c + 1]
     l += nums[c]
-    ++c;
+    ++c
   }
-  if(l === r) return c
+  if (l === r) return c
   return -1
 }
 ```

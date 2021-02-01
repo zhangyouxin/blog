@@ -1,9 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Valine from "gatsby-plugin-valine"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -24,7 +24,7 @@ const BlogPostTemplate = ({ data, location }) => {
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
-          <div class="title-tags">
+          <div className="title-tags">
             {post.frontmatter.tags &&
               post.frontmatter.tags.map((tag, index) => {
                 return (
@@ -41,7 +41,7 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <hr />
         <footer>
-          <Bio />
+          <Valine />
         </footer>
       </article>
       <nav className="blog-post-nav">
