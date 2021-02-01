@@ -41,7 +41,7 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <hr />
         <footer>
-          <Valine />
+          <Valine path={location.pathname} />
         </footer>
       </article>
       <nav className="blog-post-nav">
