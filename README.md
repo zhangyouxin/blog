@@ -42,3 +42,4 @@
    - [x] RSS Feed
    - [ ] Github Actions
    - [x] Comments
+   - [ ] 日 PV 100
