@@ -71,7 +71,7 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()} zhangyouxin
+        <div className='h-1 bg-gray-400 shadow-md rounded-3xl'/>
         {isRootPath && (
           <div>
             <div style={{ marginTop: "1rem" }}>友情链接</div>
@@ -87,6 +87,7 @@ const Layout = ({ location, title, children }) => {
             </div>
           </div>
         )}
+        <div className="mt-5 flex justify-center"><span className="mr-5">zhangyouxin © {new Date().getFullYear()}</span>  <a href='https://blog.weshinekx.cn/rss.xml' target='_blank' rel="noreferrer">RSS</a></div>
       </footer>
     </div>
   )

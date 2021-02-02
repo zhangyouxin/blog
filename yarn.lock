@@ -6226,7 +6226,7 @@ gatsby-plugin-baidu-analytics@^2.2.0:
   resolved "https://registry.npm.taobao.org/gatsby-plugin-baidu-analytics/download/gatsby-plugin-baidu-analytics-2.2.0.tgz#d8b4653d6f1ef9a2243ae0028b2ffdf592ee50e9"
   integrity sha1-2LRlPW8e+aIkOuACiy/99ZLuUOk=
 
-gatsby-plugin-feed@^2.7.0:
+gatsby-plugin-feed@^2.12.0:
   version "2.12.0"
   resolved "https://registry.npm.taobao.org/gatsby-plugin-feed/download/gatsby-plugin-feed-2.12.0.tgz#3013d0919b037f2aa56ae0661a98ab34d2b574c9"
   integrity sha1-MBPQkZsDfyqlauBmGpirNNK1dMk=

@@ -39,6 +39,6 @@
    - [x] 标签功能
    - [x] 友链
    - [x] https
-   - [ ] RSS Feed
+   - [x] RSS Feed
    - [ ] Github Actions
    - [x] Comments
